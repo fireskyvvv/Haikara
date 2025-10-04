@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <RootNamespace>Haikara.Runtime</RootNamespace>
+        <LangVersion>latest</LangVersion>
+        <AssemblyName>Haikara.Runtime</AssemblyName>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Remove="**\*.cs" />
+
+        <Compile Include="..\..\Haikara\Assets\Haikara\Runtime\**\*.cs">
+            <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+        </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="UnityEngine.CoreModule" Condition=" '$(UNITY_EDITOR_PATH)' != '' ">
+            <HintPath>$(UNITY_EDITOR_PATH)\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="UnityEngine.UIElementsModule" Condition=" '$(UNITY_EDITOR_PATH)' != '' ">
+            <HintPath>$(UNITY_EDITOR_PATH)\Data\Managed\UnityEngine\UnityEngine.UIElementsModule.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="UnityEngine.PropertiesModule" Condition=" '$(UNITY_EDITOR_PATH)' != '' ">
+            <HintPath>$(UNITY_EDITOR_PATH)\Data\Managed\UnityEngine\UnityEngine.PropertiesModule.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+    </ItemGroup>
+
+</Project>

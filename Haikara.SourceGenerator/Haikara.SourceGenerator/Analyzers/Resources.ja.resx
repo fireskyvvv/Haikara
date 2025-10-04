@@ -1,0 +1,35 @@
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="AnalyzerTitle" xml:space="preserve">
+        <value>Haikara Analyzer</value>
+    </data>
+    <data name="ErrorNotMatchedFileNameAndClassName" xml:space="preserve">
+        <value>Viewクラスはファイル名とクラス名が一致する必要があります。</value>
+    </data>
+    <data name="ErrorMultipleHaikaraUiAttributeClass" xml:space="preserve">
+        <value>HaikaraUI属性を持つクラスは1つのファイルに1つだけしか定義できません。</value>
+    </data>
+    <data name="ErrorNestedHaikaraUiAttributeClass" xml:space="preserve">
+        <value>HaikaraUI属性を持つクラスがネストされることは禁止です。</value>
+    </data>
+    <data name="WarningMissingRelatedUxmlFile" xml:space="preserve">
+        <value>関連付けられた.uxmlファイルが見つかりません。</value>
+    </data>
+    <data name="ErrorClickCommandHasNoEventBaseArgument" xml:space="preserve">
+        <value>ClickCommand属性を持つメソッドはEventBaseだけを引数に持つ必要があります。</value>
+    </data>
+    <data name="WarningHaikaraUiHasNotImplementedValidInterface" xml:space="preserve">
+        <value>HaikaraUI属性を持つクラスはIHaikaraView、またはIHaikaraStyleを実装する必要があります。</value>
+    </data>
+</root>

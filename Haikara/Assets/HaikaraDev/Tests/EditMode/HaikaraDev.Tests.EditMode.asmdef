@@ -1,0 +1,21 @@
+{
+    "name": "HaikaraDev.Tests.EditMode",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c48544e2906df9b4da907f99975a4093",
+        "GUID:e1d1934d11fcbd54b9b0acbb213df60e"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

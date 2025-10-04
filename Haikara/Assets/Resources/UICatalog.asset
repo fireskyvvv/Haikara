@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d54cc54fc245ecbb36d112ecb6ff01, type: 3}
+  m_Name: UICatalog
+  m_EditorClassIdentifier: 
+  uxmlAssets:
+    assetPathUIInfoList:
+    - id: 8056cbf7a2b426e499416b7a4c4a8884
+      assetPath: Assets/Haikara/Editor/AddressablesExtensions/AddressablesMaker/View/AddressablesGroupMakerLayout.uxml
+    resourceUIInfoList:
+    - id: 0637ef6c9caf0b743b51be931e2ab68a
+      asset: {fileID: 9197481963319205126, guid: 0637ef6c9caf0b743b51be931e2ab68a, type: 3}
+    - id: 4f74df35d43446d479b3145387941d86
+      asset: {fileID: 9197481963319205126, guid: 4f74df35d43446d479b3145387941d86, type: 3}
+    - id: 50f3939ba9e50e949a66c991254a9c63
+      asset: {fileID: 9197481963319205126, guid: 50f3939ba9e50e949a66c991254a9c63, type: 3}
+    - id: aac7b5ea7d4cc484284ad819b5034e54
+      asset: {fileID: 9197481963319205126, guid: aac7b5ea7d4cc484284ad819b5034e54, type: 3}
+    - id: fee3d50d9f8cf36479d75ffca932c496
+      asset: {fileID: 9197481963319205126, guid: fee3d50d9f8cf36479d75ffca932c496, type: 3}
+    - id: 02e7835b6001bac46a3e6d57c2cf8e20
+      asset: {fileID: 9197481963319205126, guid: 02e7835b6001bac46a3e6d57c2cf8e20, type: 3}
+    - id: d25cc33d0344b9a47b1860fd32f7c221
+      asset: {fileID: 9197481963319205126, guid: d25cc33d0344b9a47b1860fd32f7c221, type: 3}
+    - id: e6b1e3896e54450dab0f5c3865de2a1b
+      asset: {fileID: 9197481963319205126, guid: e6b1e3896e54450dab0f5c3865de2a1b, type: 3}
+    - id: 5e392d8c8077f6c4182c12d106691fb2
+      asset: {fileID: 9197481963319205126, guid: 5e392d8c8077f6c4182c12d106691fb2, type: 3}
+    - id: ecbf5f36db5ffd1438c17fd8a05b3d33
+      asset: {fileID: 9197481963319205126, guid: ecbf5f36db5ffd1438c17fd8a05b3d33, type: 3}
+    - id: 504aca388ef582341a9219d717c21a3a
+      asset: {fileID: 9197481963319205126, guid: 504aca388ef582341a9219d717c21a3a, type: 3}
+    - id: 9d1973ca7023a084cb6e38aff585cd3c
+      asset: {fileID: 9197481963319205126, guid: 9d1973ca7023a084cb6e38aff585cd3c, type: 3}
+    - id: 860982a0cd5351e4eb9f090104772019
+      asset: {fileID: 9197481963319205126, guid: 860982a0cd5351e4eb9f090104772019, type: 3}
+    - id: 34f201977cc9f1a44af09b0bccb8173d
+      asset: {fileID: 9197481963319205126, guid: 34f201977cc9f1a44af09b0bccb8173d, type: 3}
+    customUIInfoList:
+    - id: c3b90c9c2d11439797480a5c9ca02542
+    - id: 20f40d97f119361478cb0b204859bb40
+  styleAssets:
+    assetPathUIInfoList: []
+    resourceUIInfoList:
+    - id: 902223a66070df74682291f5a6459f06
+      asset: {fileID: 7433441132597879392, guid: 902223a66070df74682291f5a6459f06, type: 3}
+    - id: 97e895b66d69b8b409ca69871717504b
+      asset: {fileID: 7433441132597879392, guid: 97e895b66d69b8b409ca69871717504b, type: 3}
+    customUIInfoList:
+    - id: 14011024043a463fb97c1a064f98e248
