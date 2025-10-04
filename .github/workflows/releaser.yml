@@ -130,6 +130,7 @@ jobs:
         with:
           ref: 'master'
           fetch-depth: 0
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
 
       - name: Setup Git User
         run: |
@@ -170,6 +171,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
       - name: Delete the release branch
         run: |
           git push origin --delete ${{ needs.build_unity_package.outputs.release_branch }} || true
