@@ -2,9 +2,26 @@
   "name": "com.katen.haikara",
   "displayName": "Haikara",
   "version": "0.0.1",
+  "description": "MVVM Library for UIToolKit",
   "unity": "6000.0",
-  "description": "UIToolKit MVVM",
   "author": {
-    "name": "katen"
-  }
+    "name": "katen",
+    "url": "https://x.com/fireskyvvv"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fireskyvvv/Haikara"
+  },
+  "keywords": [
+    "ui toolkit",
+    "mvvm"
+  ],
+  "license": "MIT",
+  "samples": [
+    {
+      "displayName": "Haikara Samples",
+      "description": "Examples of Haikara.",
+      "path": "Samples~"
+    }
+  ]
 }
