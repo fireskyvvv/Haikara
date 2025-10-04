@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Haikara/Samples/Common/Runtime/Dialog/Style/SampleDialogRootControl.uss?fileID=7433441132597879392&amp;guid=97e895b66d69b8b409ca69871717504b&amp;type=3#SampleDialogRootControl" />
+    <ui:VisualElement name="dialog-root__background" class="dialog-root__background" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; background-color: rgb(141, 141, 141); align-items: center; justify-content: center; margin-top: 8%; margin-right: 8%; margin-bottom: 8%; margin-left: 8%;">
+        <ui:Button text="Button" />
+        <ui:VisualElement class="dialog-root__content-viewport" style="flex-grow: 1; flex-shrink: 0; width: 100%; background-image: url(&quot;project://database/Assets/Haikara/Samples/Addressables/Textures/256.png?fileID=2800000&amp;guid=5fe6d670c37041b4e97ad853729ebe88&amp;type=3#256&quot;); -unity-background-image-tint-color: rgba(255, 255, 255, 0.11);" />
+    </ui:VisualElement>
+</ui:UXML>

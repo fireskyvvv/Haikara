@@ -1,0 +1,17 @@
+{
+    "name": "Haikara.Samples.Counter.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c48544e2906df9b4da907f99975a4093",
+        "GUID:ec055021233d9e04ab21bf7340826479"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

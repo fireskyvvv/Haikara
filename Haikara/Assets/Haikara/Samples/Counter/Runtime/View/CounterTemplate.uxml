@@ -1,0 +1,8 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:Template name="GrandChildTemplate" src="project://database/Assets/Haikara/Samples/Counter/Runtime/View/GrandChildTemplate.uxml?fileID=9197481963319205126&amp;guid=504aca388ef582341a9219d717c21a3a&amp;type=3#GrandChildTemplate" />
+    <engine:VisualElement style="flex-grow: 1; background-color: rgba(81, 212, 209, 0.43);">
+        <engine:Label text="A child template of the Root(Counter.uxml).&#10;The number in this Label will be double the Root's value." />
+        <engine:Label text="Label" name="template-info__label" />
+    </engine:VisualElement>
+    <engine:Instance template="GrandChildTemplate" name="GrandChildTemplate" />
+</engine:UXML>

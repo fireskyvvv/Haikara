@@ -1,0 +1,20 @@
+.unity-label {
+    color: red;
+}
+
+.unity-button,
+.unity-toggle__checkmark {
+    background-color: gray;
+}
+
+#test-view__toggle {
+    color: blue;
+}
+
+#test-view__text-field .unity-base-text-field__input {
+    color: blue;
+}
+
+.unity-label {
+    font-size: 15;
+}

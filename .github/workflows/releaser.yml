@@ -1,0 +1,175 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version (e.g., 1.2.3)'
+        required: true
+        type: string
+      prerelease:
+        description: 'Mark as a pre-release'
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  build_unity_package:
+    name: Build UnityPackage
+    runs-on: ubuntu-latest
+    outputs:
+      release_branch: release/v${{ github.event.inputs.version }}
+    steps:
+      - name: Check running on master
+        if: github.ref_name != 'master'
+        run: |
+          echo "::error::This workflow can only be run from the 'master' branch."
+          exit 1
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: 'master'
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Setup Git User
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      
+      # Create and checkout branch: release/v{version}
+      - name: Checkout release branch
+        run: git checkout -b release/v${{ github.event.inputs.version }}
+      
+      # Update package.json
+      # See Haikara.Tools
+      - name: Update package json
+        run: >
+          dotnet run --project Haikara.Tools/Haikara.Tools.csproj release-update-version
+          --version "${{ github.event.inputs.version }}"
+          --package-json-path "Haikara/Assets/Haikara/package.json"
+      
+      # Commit updated package.json
+      - name: Push bump version commit
+        id: local_commit
+        run: |
+          git add .
+          git commit -m "chore: Bump version to ${{ github.event.inputs.version }}"
+          git push --set-upstream origin release/v${{ github.event.inputs.version }}
+
+      - name: Create Unity Package
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          unityVersion: 6000.0.58f2
+          projectPath: Haikara
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          targetPlatform: StandaloneLinux64
+          buildMethod: HaikaraDev.Editor.Releaser.UnityPackageCreator.CI_CreateUnityPackage
+          customParameters: -tag v${{ github.event.inputs.version }}
+
+      - name: Check Unity Package Creation
+        run: |
+          echo "Check created .unitypackage "
+          ls -R Haikara/build
+          
+          if ls Haikara/build/*.unitypackage 1> /dev/null 2>&1; then
+            echo "Unity package(s) found."
+          else
+            echo "::error::Unity package not found in the 'Haikara/build' directory after build step"
+            exit 1
+          fi
+
+      - name: Upload Unity Package as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: unity-package
+          path: Haikara/build/*.unitypackage
+  
+  publish:
+    name: Publish
+    needs: build_unity_package
+    if: success()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Unity Package from artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: unity-package
+
+      - name: Create Release and Tag
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: 'v${{ github.event.inputs.version }}'
+          name: 'Release v${{ github.event.inputs.version }}'
+          files: "*.unitypackage"
+          prerelease: ${{ github.event.inputs.prerelease }}
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+          target_commitish: release/v${{ github.event.inputs.version }}
+
+  merge_to_master:
+    # merge release branch to master
+    name: Merge to Master
+    needs: [ build_unity_package, publish ]
+    if: success()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: 'master'
+          fetch-depth: 0
+
+      - name: Setup Git User
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Update master ref to release commit
+        run: |
+          COMMIT_SHA=$(git rev-parse origin/${{ needs.build_unity_package.outputs.release_branch }})
+          git push origin ${COMMIT_SHA}:refs/heads/master
+
+  release_upm_branch:
+    runs-on: ubuntu-latest
+    needs: merge_to_master
+    if: success()
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Tag name
+        id: tag
+        run: echo ::set-output name=name::${GITHUB_REF#refs/tags/v}
+
+      - name: Create UPM Branches
+        uses: hecomi/create-upm-branch-action@main
+        with:
+          git-tag: 'v${{ github.event.inputs.version }}'
+          pkg-root-dir-path: Haikara/Assets/Haikara
+          samples-dir: Samples
+
+  cleanup:
+    name: Cleanup Release Branch
+    needs: [ build_unity_package, merge_to_master ]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Delete the release branch
+        run: |
+          git push origin --delete ${{ needs.build_unity_package.outputs.release_branch }} || true

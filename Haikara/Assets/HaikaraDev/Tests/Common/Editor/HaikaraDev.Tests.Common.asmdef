@@ -1,0 +1,20 @@
+{
+    "name": "HaikaraDev.Tests.Common",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c48544e2906df9b4da907f99975a4093"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="TestSubView" src="project://database/Assets/HaikaraDev/Tests/Common/Editor/View/TestSubView.uxml?fileID=9197481963319205126&amp;guid=4f74df35d43446d479b3145387941d86&amp;type=3#TestSubView" />
+    <Style src="project://database/Assets/HaikaraDev/Tests/Common/Editor/View/TestStyle.uss?fileID=7433441132597879392&amp;guid=902223a66070df74682291f5a6459f06&amp;type=3#TestStyle" />
+    <ui:Label text="Label" name="test-view__label" />
+    <ui:Toggle label="Toggle" name="test-view__toggle" />
+    <ui:TextField label="Text Field" placeholder-text="filler text" name="test-view__text-field" />
+    <ui:Button text="Button" name="test-view__button" />
+    <ui:Instance template="TestSubView" name="test-view-sub" />
+</ui:UXML>

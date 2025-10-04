@@ -1,0 +1,1 @@
+dotnet run build-sg --build-config Release

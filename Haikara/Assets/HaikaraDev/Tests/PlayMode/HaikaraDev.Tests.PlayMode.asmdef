@@ -1,0 +1,22 @@
+{
+    "name": "HaikaraDev.Tests.PlayMode",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c48544e2906df9b4da907f99975a4093",
+        "GUID:27619889b8ba8c24980f49ee34dbb44a",
+        "GUID:e1d1934d11fcbd54b9b0acbb213df60e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,6 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:Label text="Asset Bundle Counter Sample" />
+    <engine:Label text="Label" name="counter__value" />
+    <engine:Button text="Add" name="counter__button--add" />
+    <engine:Button text="Show Dialog" name="counter__button--show-dialog" />
+</engine:UXML>

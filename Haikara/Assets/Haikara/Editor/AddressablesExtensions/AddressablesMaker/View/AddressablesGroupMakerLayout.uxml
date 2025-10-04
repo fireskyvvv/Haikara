@@ -1,0 +1,14 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Haikara/Editor/Core/AddressablesExtensions/AddressablesMaker/View/HaikaraAddressablesGroupMakerStyle.uss?fileID=7433441132597879392&amp;guid=885f9850ade377f4bbec3d1cef9e88d8&amp;type=3#HaikaraAddressablesGroupMakerStyle" />
+    <ui:Label text="Haikara Addressables Builder" style="font-size: 16px; padding-bottom: 8px; padding-top: 4px; padding-right: 8px; padding-left: 8px; -unity-font-style: bold;" />
+    <ui:Label text="infoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfoinfo" name="label--window-info" style="white-space: normal; margin-top: 0; margin-right: 4px; margin-bottom: 4px; margin-left: 4px; padding-bottom: 8px;" />
+    <ui:VisualElement name="addressable-group-name" style="flex-grow: 0; flex-shrink: 0; padding-left: 4px; padding-bottom: 8px;">
+        <ui:Label text="Label" name="addressable-group-name__label" style="padding-bottom: 4px; -unity-font-style: bold;" />
+        <ui:TextField label="uxml" placeholder-text="filler text" name="addressable-group-name__text-field--uxml-group" />
+        <ui:TextField label="uss" placeholder-text="filler text" name="addressable-group-name__text-field--uss-group" />
+    </ui:VisualElement>
+    <ui:Button text="Button" name="button--run-build" />
+    <ui:ScrollView name="validation" mode="VerticalAndHorizontal" style="max-height: 40%; min-height: 40%; height: 100%; padding-top: 4px; padding-right: 4px; padding-bottom: 4px; padding-left: 4px;">
+        <ui:Label name="validation__info-text" />
+    </ui:ScrollView>
+</ui:UXML>
