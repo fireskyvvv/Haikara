@@ -1,0 +1,16 @@
+{
+    "name": "Haikara.Samples.Common.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c48544e2906df9b4da907f99975a4093"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,12 @@
+.dialog-root__background {
+    transition: scale 200ms ease-out 0s;
+}
+
+.dialog-root__background--init {
+    scale: 0.01;
+    background-color: red;
+}
+
+.dialog-root__background--shown {
+    scale: 1;
+}

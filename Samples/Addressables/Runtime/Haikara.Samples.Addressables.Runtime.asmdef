@@ -1,0 +1,24 @@
+{
+    "name": "Haikara.Samples.Addressables.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c48544e2906df9b4da907f99975a4093",
+        "GUID:67f49afb46083024ea6a375f325b39e8",
+        "GUID:ec055021233d9e04ab21bf7340826479"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.addressables",
+            "expression": "2.5.0",
+            "define": "HAIKARA_IS_EXISTS_ADDRESSABLES"
+        }
+    ],
+    "noEngineReferences": false
+}

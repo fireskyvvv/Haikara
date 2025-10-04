@@ -1,0 +1,51 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 0;">
+        <ui:Button text="Output Logs" name="button" />
+    </ui:VisualElement>
+    <ui:ScrollView name="scroll-view" style="display: flex; min-height: 300px; max-height: 4000px; flex-shrink: 1; flex-grow: 0; padding-top: 16px; height: 300px;">
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:Label text="Label" name="label" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:Toggle label="Toggle" name="toggle" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:ToggleButtonGroup label="Toggle Button Group" name="toggle-button-group" value="00100" is-multiple-selection="true">
+                <ui:Button text="Button" />
+                <ui:Button text="Button" />
+                <ui:Button text="Button" />
+                <ui:Button text="Button" />
+                <ui:Button text="Button" />
+            </ui:ToggleButtonGroup>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:TextField label="Text Field" placeholder-text="filler text" name="text-field" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:Slider label="Slider" value="42" high-value="100" name="slider" show-input-field="true" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:SliderInt label="SliderInt" value="42" high-value="100" name="slider-int" show-input-field="true" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+            <ui:MinMaxSlider label="Min/Max Slider" value="10,12" low-limit="-10" high-limit="40" name="min-max-slider" style="flex-grow: 1;" />
+            <ui:Label text="Label" name="min-max-slider__info" style="flex-grow: 0; max-width: 15%; min-width: 15%;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:Button text="Button" name="button__progress-start" />
+            <ui:ProgressBar value="4.4" title="my-progress" name="progress-bar" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:DropdownField label="Dropdown" name="dropdown" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:EnumField label="Enum" name="enum-field" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:RadioButton label="Radio Button" name="radio-button" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:RadioButtonGroup label="Radio Button Group" name="radio-button-group" />
+        </ui:VisualElement>
+    </ui:ScrollView>
+</ui:UXML>
