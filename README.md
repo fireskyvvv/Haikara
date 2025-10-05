@@ -39,6 +39,9 @@ You can also install it by directly editing Packages/manifest.json:
 Download the `.unitypackage` from the [releases](https://github.com/fireskyvvv/Haikara/releases) page and import it into
 the Unity Editor.
 
+### License
+Haikara is released under the [MIT License](https://github.com/fireskyvvv/Haikara/blob/master/LICENSE.md).
+
 ## 日本語
 
 Haikaraは、UnityのUIToolKit向けに設計されたMVVM（Model-View-ViewModel）ライブラリです。  
@@ -72,3 +75,6 @@ https://github.com/fireskyvvv/Haikara.git#upm
 #### UnityPackageでのインストール
 
 [リリース](https://github.com/fireskyvvv/Haikara/releases)ページから`.unitypackage`をダウンロードし、UnityEditor上で展開してください
+
+### ライセンス
+Haikaraは [MIT License](https://github.com/fireskyvvv/Haikara/blob/master/LICENSE.md)で公開しています。
