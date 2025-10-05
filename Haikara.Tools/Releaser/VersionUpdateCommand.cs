@@ -21,11 +21,10 @@ public partial class VersionUpdateCommand
     private void ValidateVersionFormat(string version)
     {
         Console.WriteLine("Validating version format...");
-        // '1.2.3' や '1.2.3-alpha.1' などの形式を許可
         if (!SemVerRegex().IsMatch(version))
         {
             var errorMessage =
-                $"❌ Error: Version format is invalid. Received: '{version}'. Please use a format like '1.2.3'.";
+                $"Error: Version format is invalid. Received: '{version}'. Please use a format like '1.2.3'.";
             Console.WriteLine(errorMessage);
             throw new ArgumentException(errorMessage);
         }

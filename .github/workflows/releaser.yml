@@ -73,7 +73,6 @@ jobs:
         with:
           unityVersion: 6000.0.58f2
           projectPath: Haikara
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
           targetPlatform: StandaloneLinux64
           buildMethod: HaikaraDev.Editor.Releaser.UnityPackageCreator.CI_CreateUnityPackage
           customParameters: -tag v${{ github.event.inputs.version }}
@@ -152,14 +151,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Tag name
-        id: tag
-        run: echo ::set-output name=name::${GITHUB_REF#refs/tags/v}
-
       - name: Create UPM Branches
         uses: hecomi/create-upm-branch-action@main
         with:
-          git-tag: 'v${{ github.event.inputs.version }}'
+          git-tag: '${{ github.event.inputs.version }}'
+          main-branch: 'master'
           pkg-root-dir-path: Haikara/Assets/Haikara
           samples-dir: Samples
 
