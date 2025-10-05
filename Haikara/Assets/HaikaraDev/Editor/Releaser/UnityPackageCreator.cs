@@ -21,14 +21,14 @@ namespace HaikaraDev.Editor.Releaser
 
         private static void CI_CreateUnityPackage()
         {
-            var version = GetArgument("-tag");
-            if (string.IsNullOrEmpty(version))
+            var tag = GetArgument("-tag");
+            if (string.IsNullOrEmpty(tag))
             {
                 // 引数が渡されなかった場合のエラー処理
                 throw new ArgumentException("'-tag' command line argument not provided. Cannot create package without a version.");
             }
 
-            CreateUnityPackage("build", tag: version);
+            CreateUnityPackage("build", tag: tag);
         }
 
         private static void CreateUnityPackage(string exportDirectory, string tag = null)
@@ -37,7 +37,7 @@ namespace HaikaraDev.Editor.Releaser
             var packageName = "Haikara.unitypackage";
             if (!string.IsNullOrEmpty(tag))
             {
-                packageName = $"Haikara-{tag}.unitypackage";
+                packageName = $"Haikara-v{tag}.unitypackage";
             }
             
             if (!Directory.Exists(exportDirectory))

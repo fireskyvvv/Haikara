@@ -75,7 +75,7 @@ jobs:
           projectPath: Haikara
           targetPlatform: StandaloneLinux64
           buildMethod: HaikaraDev.Editor.Releaser.UnityPackageCreator.CI_CreateUnityPackage
-          customParameters: -tag v${{ github.event.inputs.version }}
+          customParameters: -tag ${{ github.event.inputs.version }}
 
       - name: Check Unity Package Creation
         run: |
@@ -109,7 +109,7 @@ jobs:
       - name: Create Release and Tag
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: 'v${{ github.event.inputs.version }}'
+          tag_name: '${{ github.event.inputs.version }}'
           name: 'Release v${{ github.event.inputs.version }}'
           files: "*.unitypackage"
           prerelease: ${{ github.event.inputs.prerelease }}
