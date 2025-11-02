@@ -32,18 +32,23 @@ namespace Haikara.Runtime.Bindable
         }
 
         public abstract void FindElementAndSetBinding(VisualElement elementRoot);
-        
+
         private void OnDataSourceChanged(object? previous, object? newValue)
         {
             if (Elements.Count == 0)
             {
                 return;
             }
-            
+
             foreach (var element in Elements)
             {
-                element.dataSource = newValue;
+                ElementDataSourceChanging(element, previous, newValue);
             }
+        }
+
+        protected virtual void ElementDataSourceChanging(T element, object? previous, object? newValue)
+        {
+            element.dataSource = newValue;
         }
     }
 }
