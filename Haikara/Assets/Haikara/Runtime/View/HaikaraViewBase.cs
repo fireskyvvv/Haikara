@@ -55,6 +55,11 @@ namespace Haikara.Runtime.View
         protected virtual void InitializeComponentInternal()
         {
         }
+        
+        protected virtual void OnDetachViewInternal(DetachFromPanelEvent detachFromPanelEvent)
+        {
+            RootElement?.UnregisterCallback<DetachFromPanelEvent>(OnDetachViewInternal);
+        }
 
         public virtual string GetGuid() => "";
 
@@ -143,7 +148,11 @@ namespace Haikara.Runtime.View
 
         public void LinkElements(VisualElement elementRoot)
         {
+            RootElement?.UnregisterCallback<DetachFromPanelEvent>(OnDetachViewInternal);
+
             RootElement = elementRoot;
+            RootElement.RegisterCallback<DetachFromPanelEvent>(OnDetachViewInternal);
+
             ElementProperties.SortElementPropertiesByPriority();
             foreach (var elementProperty in ElementProperties)
             {

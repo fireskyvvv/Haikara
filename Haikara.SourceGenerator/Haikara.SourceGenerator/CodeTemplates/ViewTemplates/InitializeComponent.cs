@@ -17,7 +17,7 @@ internal partial class ViewTemplate
     {
         var codeString =
             $$"""
-              
+
                       protected {{generationSource.ReturnType("void")}} InitializeComponentInternal()
                       {
                       
@@ -28,7 +28,7 @@ internal partial class ViewTemplate
         {
             codeString +=
                 $$"""
-                  
+
                               {{initializeCodeString}}
 
                   """;
@@ -38,7 +38,7 @@ internal partial class ViewTemplate
         {
             codeString +=
                 $$"""
-                  
+
                               ElementProperties.Add(
                                   ManipulatorProperty<VisualElement>.Create(
                                       elementNameInfo: new ElementNameInfo(
@@ -52,15 +52,47 @@ internal partial class ViewTemplate
                   """;
         }
 
+        foreach (var callbackInfo in GetCallbackInfo(generationSource))
+        {
+            codeString +=
+                $$"""
+
+                              ElementProperties.Add(
+                                  CallbackProperty<VisualElement,{{callbackInfo.eventTypeString}}>.Create(
+                                      elementNameInfo: new ElementNameInfo(
+                                          elementName: {{callbackInfo.elementName}},
+                                          index: {{callbackInfo.indexString}},
+                                          findType: {{callbackInfo.findTypeString}}
+                                      ),
+                                      callback: (evt) => { {{callbackInfo.methodName}}(evt); }
+                                  )
+                              );
+                  """;
+        }
+
+        foreach (var callbackInfo in GetInputActionCallbackInfo(generationSource))
+        {
+            codeString +=
+                $$"""
+
+                              {{DefinedStrings.InputSystemExtensionNamespace}}.InputCallbackManager.Instance.RegisterInputAction(
+                                  actionNameOrId: {{callbackInfo.actionNameOrId}},
+                                  throwIfNotFound: {{callbackInfo.throwIfNotFound}},
+                                  inputType: {{callbackInfo.inputTypeString}},
+                                  callback: {{callbackInfo.methodName}}
+                              );
+                  """;
+        }
+
         codeString +=
             $$"""
-              
-              
+
+
                           ElementProperties.SortElementPropertiesByPriority();
               """;
         codeString +=
             $$"""
-              
+
                       }
               """;
 
