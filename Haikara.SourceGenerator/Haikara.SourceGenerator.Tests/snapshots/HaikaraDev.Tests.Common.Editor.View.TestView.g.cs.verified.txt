@@ -68,6 +68,12 @@ namespace HaikaraDev.Tests.Common.Editor.View
                 templateId: "TestSubView"
             );
         }
+        
+        protected override void OnDetachViewInternal(DetachFromPanelEvent detachFromPanelEvent)
+        {
+        
+            base.OnDetachViewInternal(detachFromPanelEvent);
+        }
     }
     #nullable restore
 }
