@@ -88,6 +88,6 @@ public static class GenerationSourceProvider
 
                 return builder.ToImmutable();
             });
-    }    
+    }
 }
 

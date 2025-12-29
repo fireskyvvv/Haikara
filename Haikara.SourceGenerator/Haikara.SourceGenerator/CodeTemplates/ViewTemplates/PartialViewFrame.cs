@@ -50,6 +50,7 @@ internal partial class ViewTemplate
                                    public {{generationSource.ReturnType(DefinedStrings.AssetReferenceMode)}} AssetReferenceMode => {{generationSource.ReferenceModeString()}};
                                    {{InitializeComponentCodeString(generationSource, elementPropertyFieldList, templatePropertyFieldList, engineElements)}}
                                    {{ElementNamesCodeString(engineElements)}}
+                                   {{OnDetachViewInternalCodeString(generationSource, elementPropertyFieldList, templatePropertyFieldList, engineElements)}}
                                }
                                #nullable restore
                            }

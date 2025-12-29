@@ -7,6 +7,7 @@ public static class DefinedStrings
     public const string CatalogNamespace = $"{RuntimeNamespace}.Catalog";
     public const string UiAttributeName = $"{RuntimeNamespace}.HaikaraUIAttribute";
     public const string AssetReferenceMode = $"{RuntimeNamespace}.AssetReferenceMode";
+    public const string InputSystemExtensionNamespace = $"{RuntimeNamespace}.InputSystemExtension";
 
 
     private const string RuntimeViewNamespace = RuntimeNamespace + ".View";
@@ -28,6 +29,10 @@ public static class DefinedStrings
     public const string BindablePropertyInterfaceName = $"{BindableNamespace}.IBindableProperty";
     public const string ManipulatorElementPropertyDisplayString = $"{BindableNamespace}.ManipulatorProperty<T>";
     public const string ClickCommandAttributeTypeName = $"{BindableNamespace}.ClickCommandAttribute";
+    public const string ClickCallbackTypeName = $"{BindableNamespace}.CallbackAttribute";
+
+    public const string InputActionDefineTypeName = $"{InputSystemExtensionNamespace}.InputActionDefineAttribute";
+    public const string InputActionCallbackTypeName = $"{InputSystemExtensionNamespace}.InputActionCallbackAttribute";
 
     public const string TemplatePropertyInterfaceName = $"{BindableNamespace}.ITemplateProperty";
 }
